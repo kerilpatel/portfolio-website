@@ -20,7 +20,7 @@ import {
     tesla,
     shopify,
     carrent,
-    job ,
+    jobit ,
     tripguide,
     threejs,
   } from "../assets";
@@ -236,7 +236,7 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image : job,
+      image : jobit,
       source_code_link: "https://github.com/",
     },
     {
