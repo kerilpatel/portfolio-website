@@ -12,6 +12,7 @@ const App = () => {
 				<Hero />
 			</div>
 			<About />
+			<Experience />
 		</div>
 		</BrowserRouter>
 	)
