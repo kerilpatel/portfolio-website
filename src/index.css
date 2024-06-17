@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.canvas {
+  touch-action: pan-y !important;
+}
+
 * {
   margin: 0;
   padding: 0;
