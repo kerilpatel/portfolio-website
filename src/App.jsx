@@ -14,6 +14,7 @@ const App = () => {
 			<Experience />
 			<Tech />
 			<Works />
+			<Feedbacks />
 		</div>
 		</BrowserRouter>
 	)
