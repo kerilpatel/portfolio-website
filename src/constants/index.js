@@ -23,6 +23,9 @@ import {
     jobit ,
     tripguide,
     threejs,
+    school,
+    college,
+    office,
   } from "../assets";
   
   export const navLinks = [
@@ -116,55 +119,61 @@ import {
   
   const experiences = [
     {
-      title: "React.js Developer",
-      company_name: "Starbucks",
-      icon: starbucks,
+      title: "School",
+      company_name: "Kendriya Vidyalaya No. 2, Kribhco, Surat - CBSE",
+      icon: school,
       iconBg: "#383E56",
-      date: "March 2020 - April 2021",
+      date: "2007 - 2019",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Completed 10th Standard (SSC) in 2017 with a CGPA of 9.4 out of 10",
+        "Completed 12th Standard (HSC) in 2019 with a percentage of 77.6%"
       ],
     },
     {
-      title: "React Native Developer",
-      company_name: "Tesla",
-      icon: tesla,
+      title: "Computer Science & Engineering",
+      company_name: "RV Insitute of Technology and Management, Bangalore - Affiliated to VTU",
+      icon: college,
       iconBg: "#E6DEDD",
-      date: "Jan 2021 - Feb 2022",
+      date: "2019 - 2023",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Graduated with a CGPA of 7.83/10",
+        "For engineering major project, Developed 'SmartSell', a retail sales analysis dashboard using Python and Streamlit, implementing machine learning algorithms for personalized recommendations",
+        "Founding Member and Head-Coordinator of The Entrepreneurship Cell - Established the College Society with a motive to spread a word about Entrepreneurship and cultivate problem solving skills among the students of RVITM",
+        "Organized and managed events with a team of 30+ coordinators, collaborating with various college societies"
       ],
     },
     {
-      title: "Web Developer",
-      company_name: "Shopify",
-      icon: shopify,
+      title: "Intern",
+      company_name: "Zebra Technologies",
+      icon: office,
       iconBg: "#383E56",
-      date: "Jan 2022 - Jan 2023",
+      date: "Jan 2023 - Jun 2023",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Assisted with troubleshooting and bug fixing in existing codebase",
+        "Worked on cross-platform mobile application development using Flutter and Xamarin",
+        "Participated in daily stand-up meetings, code reviews, and other team meetings to discuss project progress and identify areas for improvement"
       ],
     },
     {
-      title: "Full stack Developer",
-      company_name: "Meta",
-      icon: meta,
+      title: "Software Engineer",
+      company_name: "Gida Technologies",
+      icon: office,
       iconBg: "#E6DEDD",
-      date: "Jan 2023 - Present",
+      date: "Jul 2023 - Feb 2024",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "As a Flutter Developer, played a key role in the continuous development and timely delivery of two major projects, ensuring high standards of code quality and structure",
+        "Collaborated closely with cross-functional teams and clients to implement a range of user-centric features and functionalities, enhancing app performance and user satisfaction",
+        "Developed innovative solutions to complex technical challenges, consistently demonstrating a proactive approach in optimizing application functionality and user engagement"
+      ],
+    },
+    {
+      title: "Software Engineer, I",
+      company_name: "Zebra Technologies",
+      icon: office,
+      iconBg: "#383E56",
+      date: "March 2023 - Present",
+      points: [
+        "Rejoined Zebra Technologies as a Software Engineer, I, to work on the development of applications, leveraging my expertise in Flutter and Xamarin",
       ],
     },
   ];

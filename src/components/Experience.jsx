@@ -70,7 +70,7 @@ const Experience = () => {
           What I have done so far
         </p>
         <h2 className={`${styles.sectionHeadText}`}>
-          Experience
+          My Journey.
         </h2>
 
       </div>
