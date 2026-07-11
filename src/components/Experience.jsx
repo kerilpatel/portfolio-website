@@ -5,13 +5,9 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
-import { motion } from "framer-motion";
-
-import { tesla } from "../assets";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
-import { textVariant } from "../utils/motion";
 
 const ExperienceCard = ({ experience }) => {
   return (
