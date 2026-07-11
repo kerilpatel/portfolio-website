@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 
 import CanvasLoader from "../Loader";
 
@@ -9,7 +10,7 @@ const Computers = ({ isMobile }) => {
 
   return (
     <mesh>
-      <hemisphereLight intensity={1} groundColor='black' />
+      <hemisphereLight intensity={1} groundColor="black" />
       <spotLight
         position={[-20, 50, 10]}
         angle={0.12}
@@ -50,7 +51,7 @@ const ComputersCanvas = () => {
 
   return (
     <Canvas
-      frameloop='demand'
+      frameloop="demand"
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
