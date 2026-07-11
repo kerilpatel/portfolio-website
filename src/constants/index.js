@@ -38,6 +38,10 @@ export const navLinks = [
     title: "Work",
   },
   {
+    id: "skills",
+    title: "Skills",
+  },
+  {
     id: "contact",
     title: "Contact",
   },
@@ -62,58 +66,43 @@ const services = [
   },
 ];
 
-const technologies = [
+const skills = [
   {
-    name: "HTML 5",
-    icon: html,
+    title: "Languages",
+    items: ["Dart", "Python", "JavaScript", "TypeScript", "SQL"],
   },
   {
-    name: "CSS 3",
-    icon: css,
+    title: "Frameworks",
+    items: ["Flutter", "Next.js", "Django"],
   },
   {
-    name: "JavaScript",
-    icon: javascript,
+    title: "Generative AI",
+    items: [
+      "OpenAI APIs",
+      "RAG",
+      "Vector Stores",
+      "AI Agents",
+      "MCP",
+      "Fine Tuning",
+      "Claude Code (Plugins & Skills)",
+    ],
   },
   {
-    name: "TypeScript",
-    icon: typescript,
+    title: "Architecture & Concepts",
+    items: [
+      "Clean Architecture",
+      "Cross-Platform Development",
+      "State Management",
+      "Native Method Channels",
+      "Android Intents",
+      "OAuth 2.0",
+      "Unit Testing",
+      "SDLC",
+    ],
   },
   {
-    name: "React JS",
-    icon: reactjs,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
+    title: "Integrations & APIs",
+    items: ["REST APIs", "WebSockets", "Jira", "Confluence", "GitHub"],
   },
 ];
 
@@ -292,4 +281,4 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, skills, experiences, testimonials, projects };
