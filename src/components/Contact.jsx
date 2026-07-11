@@ -35,9 +35,7 @@ const Contact = () => {
     const subject = encodeURIComponent(
       `New Inquiry from Portfolio Website - ${form.name}`,
     );
-    const body = encodeURIComponent(
-      `Hi, I am ${form.name}\n\n${form.message}`,
-    );
+    const body = encodeURIComponent(`Hi, I am ${form.name}\n\n${form.message}`);
 
     window.location.href = `mailto:kerilpatel@outlook.com?subject=${subject}&body=${body}`;
 
