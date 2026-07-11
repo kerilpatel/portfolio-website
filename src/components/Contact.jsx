@@ -2,8 +2,6 @@ import React, { useRef, useState } from "react";
 
 import { motion } from "framer-motion";
 
-import emailjs from "@emailjs/browser";
-
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { slideIn } from "../utils/motion";
@@ -13,11 +11,8 @@ const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
     name: "",
-    email: "",
     message: "",
   });
-
-  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { target } = e;
@@ -31,39 +26,25 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
 
-    emailjs
-      .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: "JavaScript Mastery",
-          from_email: form.email,
-          to_email: "sujata@jsmastery.pro",
-          message: form.message,
-        },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+    if (!form.name || !form.message) {
+      alert("Please fill in all fields before sending.");
+      return;
+    }
 
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
+    const subject = encodeURIComponent(
+      `New Inquiry from Portfolio Website - ${form.name}`,
+    );
+    const body = encodeURIComponent(
+      `Hi, I am ${form.name}\n\n${form.message}`,
+    );
 
-          alert("Ahh, something went wrong. Please try again.");
-        },
-      );
+    window.location.href = `mailto:kerilpatel@outlook.com?subject=${subject}&body=${body}`;
+
+    setForm({
+      name: "",
+      message: "",
+    });
   };
 
   return (
@@ -94,17 +75,6 @@ const Contact = () => {
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your email</span>
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              placeholder="What's your web address?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-            />
-          </label>
-          <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your Message</span>
             <textarea
               rows={7}
@@ -120,7 +90,7 @@ const Contact = () => {
             type="submit"
             className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
           >
-            {loading ? "Sending..." : "Send"}
+            Send
           </button>
         </form>
       </motion.div>
