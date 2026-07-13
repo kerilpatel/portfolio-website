@@ -5,6 +5,7 @@ import {
   creator,
   jobit,
   mobile,
+  nvidiaGenAiBadge,
   office,
   school,
   tripguide,
@@ -264,4 +265,14 @@ const projects = [
   },
 ];
 
-export { services, skills, experiences, testimonials, projects };
+const certifications = [
+  {
+    name: "NVIDIA-Certified Associate: Generative AI LLMs",
+    issuer: "NVIDIA",
+    date: "Jul 2026",
+    badge: nvidiaGenAiBadge,
+    link: "https://www.credly.com/badges/b6032895-a039-445c-8d01-3d7455c2841d/public_url",
+  },
+];
+
+export { services, skills, experiences, testimonials, projects, certifications };

@@ -1,4 +1,5 @@
 import About from "./About";
+import Certifications from "./Certifications";
 import Contact from "./Contact";
 import Experience from "./Experience";
 import Feedbacks from "./Feedbacks";
@@ -16,6 +17,7 @@ export {
   Experience,
   Works,
   Feedbacks,
+  Certifications,
   Contact,
   EarthCanvas,
   ComputersCanvas,

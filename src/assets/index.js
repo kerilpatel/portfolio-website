@@ -12,6 +12,7 @@ import office from "./office.png";
 import school from "./school.png";
 import tripguide from "./tripguide.png";
 import web from "./web.png";
+import nvidiaGenAiBadge from "./nvidia-genai-badge.png";
 
 export {
   logo,
@@ -28,4 +29,5 @@ export {
   office,
   college,
   school,
+  nvidiaGenAiBadge,
 };
