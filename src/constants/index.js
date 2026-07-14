@@ -175,27 +175,35 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+      "I worked with Keril on our mobile application team, where he consistently delivered high-quality features end to end. He built out complex connection-handling flows for mobile devices (iOS, Android, and Windows), taking ownership from UI design through backend data integration. What stood out most was his thoroughness — Keril has a strong eye for edge cases and a methodical approach to debugging. He's comfortable stepping outside his core mobile work to contribute to broader engineering initiatives, including internal AI tooling efforts. Keril is a dependable, detail-oriented engineer who raises the quality bar on any feature he touches. I'd welcome the chance to work with him again.",
+    name: "Bret Anno",
+    designation: "Director, Software Engineering",
+    company: "Zebra Technologies",
+    image: "https://ui-avatars.com/api/?name=Bret+Anno&background=0D8ABC&color=fff&size=128",
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
+      "I had the pleasure of working with Kiril and watching him grow from a talented intern into an indispensable asset to our team. Right from day one, he stood out for his ability to learn rapidly and transition seamlessly into contributing to live, mission-critical projects. What truly sets Kiril apart is his proactive mindset — he consistently upgraded his skills to match evolving demands and quickly became our absolute go-to person for all AI initiatives and adoptions. His focus, dedication, and technical agility are rare to find. Kiril is a top-tier professional who would be a highly valuable resource to any engineering organization, and I highly recommend him.",
+    name: "Manjunath Gundurao",
+    designation: "Engineering Manager",
+    company: "Zebra Technologies",
+    image: "https://ui-avatars.com/api/?name=Manjunath+Gundurao&background=2E7D32&color=fff&size=128",
   },
   {
     testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+      "Having studied alongside Keril, I've always been impressed by his initiative. A perfect example of this was when he founded our college's E-Cell club. He took on the massive responsibility of organizing and executing all of the club's events, consistently delivering successful outcomes through sheer dedication and sharp problem-solving. Beyond his strong work ethic, he is an excellent collaborator who brings out the best in everyone around him. If you are looking for someone who takes complete ownership and drives results, I highly recommend him!",
+    name: "Anjali S Acharya",
+    designation: "DevOps | Network Specialist",
+    company: "Peer & Colleague",
+    image: "https://ui-avatars.com/api/?name=Anjali+Acharya&background=7B1FA2&color=fff&size=128",
+  },
+  {
+    testimonial:
+      "I had the pleasure of working with Keril for nearly three years on several Flutter application and SDK projects, as well as a few AI-based initiatives. Keril has a strong technical foundation and is always eager to learn and embrace new technologies. He approaches every task with dedication, takes ownership of his work, and consistently strives to deliver high-quality solutions. Beyond his technical abilities, Keril is approachable, collaborative, receptive to feedback, and brings a positive attitude to the team. I truly enjoyed working with Keril and highly recommend him to anyone looking for a skilled, dependable, and motivated software engineer.",
+    name: "Abhilash K",
+    designation: "Software Architect",
+    company: "Zebra Technologies",
+    image: "https://ui-avatars.com/api/?name=Abhilash+K&background=C62828&color=fff&size=128",
   },
 ];
 
