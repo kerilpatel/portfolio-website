@@ -1,52 +1,37 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React from "react";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { testimonials } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { textVariant } from "../utils/motion";
 
-const CARDS_PER_VIEW = 2;
-const AUTO_SLIDE_INTERVAL = 5000;
+const MARQUEE_DURATION_S = 35; // seconds for one full pass through the unique set
 
-const FeedbackCard = ({ testimonial, name, designation, company, image }) => {
-  const [expanded, setExpanded] = useState(false);
-
+const FeedbackCard = ({ testimonial, name, designation, image }) => {
   return (
-    <div className="bg-black-200 p-10 rounded-3xl w-full sm:w-[calc(50%-14px)] flex-shrink-0">
-      <p className="text-white font-black text-[48px]">&ldquo;</p>
+    <div className="p-7 rounded-3xl border border-white/[0.08] bg-black-200">
+      <p className="text-white font-black text-[36px] leading-none">&ldquo;</p>
 
       <div className="mt-1">
-        <p
-          className={`text-white tracking-wider text-[16px] leading-[1.6] ${
-            expanded ? "" : "line-clamp-4"
-          }`}
-        >
+        <p className="text-white tracking-wider text-[16px] leading-[1.6] line-clamp-5">
           {testimonial}
         </p>
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className="text-secondary hover:text-white text-[13px] mt-2 transition-colors duration-200 cursor-pointer"
-        >
-          {expanded ? "Show less" : "Read more"}
-        </button>
 
-        <div className="mt-5 flex justify-between items-center gap-1">
-          <div className="flex-1 flex flex-col">
-            <p className="text-white font-medium text-[16px]">
-              <span className="blue-text-gradient">@</span> {name}
-            </p>
-            <p className="mt-1 text-secondary text-[12px]">
-              {designation} at {company}
-            </p>
-          </div>
-
+        <div className="mt-5 flex items-center gap-3">
           <img
             src={image}
             alt={`feedback_by-${name}`}
             className="w-10 h-10 rounded-full object-cover"
           />
+
+          <div className="flex flex-col">
+            <p className="text-white font-medium text-[16px]">
+              <span className="blue-text-gradient">@</span> {name}
+            </p>
+            <p className="mt-1 text-secondary text-[12px]">{designation}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -54,32 +39,8 @@ const FeedbackCard = ({ testimonial, name, designation, company, image }) => {
 };
 
 const Feedbacks = () => {
-  const totalSlides = Math.ceil(testimonials.length / CARDS_PER_VIEW);
-  const [[currentSlide, direction], setSlide] = useState([0, 1]);
-
-  const goToSlide = useCallback(
-    (index) => {
-      const dir = index > currentSlide ? 1 : -1;
-      setSlide([index, dir]);
-    },
-    [currentSlide]
-  );
-
-  const nextSlide = useCallback(() => {
-    setSlide(([prev]) => {
-      const next = (prev + 1) % totalSlides;
-      return [next, 1];
-    });
-  }, [totalSlides]);
-
-  // Auto-slide every 5 seconds
-  useEffect(() => {
-    const timer = setInterval(nextSlide, AUTO_SLIDE_INTERVAL);
-    return () => clearInterval(timer);
-  }, [nextSlide]);
-
-  const startIdx = currentSlide * CARDS_PER_VIEW;
-  const visibleCards = testimonials.slice(startIdx, startIdx + CARDS_PER_VIEW);
+  // Render the set twice back-to-back so translateY(-50%) loops seamlessly
+  const loopedTestimonials = [...testimonials, ...testimonials];
 
   return (
     <div className={`mt-12 bg-black-100 rounded-[20px]`}>
@@ -93,51 +54,42 @@ const Feedbacks = () => {
       </div>
 
       <div className={`-mt-20 pb-8 ${styles.paddingX}`}>
-        {/* Carousel container with fixed height to prevent layout shift */}
-        <div className="relative overflow-hidden min-h-[350px]">
-          <AnimatePresence initial={false} custom={direction}>
-            <motion.div
-              key={currentSlide}
-              custom={direction}
-              initial={(dir) => ({
-                x: dir > 0 ? "100%" : "-100%",
-                opacity: 0,
-              })}
-              animate={{
-                x: 0,
-                opacity: 1,
-              }}
-              exit={(dir) => ({
-                x: dir > 0 ? "-100%" : "100%",
-                opacity: 0,
-              })}
-              transition={{
-                x: { type: "tween", duration: 0.5, ease: [0.4, 0, 0.2, 1] },
-                opacity: { duration: 0.35 },
-              }}
-              className="absolute inset-0 flex flex-col sm:flex-row gap-7"
-            >
-              {visibleCards.map((item) => (
-                <FeedbackCard key={item.name} {...item} />
-              ))}
-            </motion.div>
-          </AnimatePresence>
+        {/* Vertical marquee: continuous auto-scroll, pauses in place on hover/focus */}
+        <div className="marquee-viewport marquee-fade relative h-[420px] sm:h-[500px] lg:h-[560px] overflow-hidden">
+          <div
+            className="marquee-track flex flex-col gap-6"
+            style={{ animationDuration: `${MARQUEE_DURATION_S}s` }}
+          >
+            {loopedTestimonials.map((card, i) => (
+              <FeedbackCard key={`${card.name}-${i}`} {...card} />
+            ))}
+          </div>
         </div>
 
-        {/* Dot indicators */}
-        <div className="flex justify-center items-center gap-3 mt-8">
-          {Array.from({ length: totalSlides }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`rounded-full transition-all duration-300 cursor-pointer ${
-                index === currentSlide
-                  ? "w-8 h-3 bg-white"
-                  : "w-3 h-3 bg-secondary/40 hover:bg-secondary/70"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
+        {/* LinkedIn link */}
+        <div className="flex justify-center mt-10">
+          <a
+            href="https://www.linkedin.com/in/keril-patel"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2.5 text-secondary hover:text-white text-[16px] font-medium transition-colors duration-200"
+          >
+            View all recommendations on LinkedIn
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </a>
         </div>
       </div>
     </div>
