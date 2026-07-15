@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
 
 import { motion } from "framer-motion";
 
@@ -7,40 +7,76 @@ import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { textVariant } from "../utils/motion";
 
-const MARQUEE_DURATION_S = 35; // seconds for one full pass through the unique set
+const MARQUEE_SPEED_PX_S = 45; // px/s, keeps loop speed consistent as testimonials are added/removed
 
-const FeedbackCard = ({ testimonial, name, designation, image }) => {
-  return (
-    <div className="p-7 rounded-3xl border border-white/[0.08] bg-black-200">
-      <p className="text-white font-black text-[36px] leading-none">&ldquo;</p>
-
-      <div className="mt-1">
-        <p className="text-white tracking-wider text-[16px] leading-[1.6] line-clamp-5">
-          {testimonial}
+const FeedbackCard = React.forwardRef(
+  ({ testimonial, name, designation, image }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className="p-7 rounded-3xl border border-white/[0.08] bg-black-200"
+      >
+        <p className="text-white font-black text-[36px] leading-none">
+          &ldquo;
         </p>
 
-        <div className="mt-5 flex items-center gap-3">
-          <img
-            src={image}
-            alt={`feedback_by-${name}`}
-            className="w-10 h-10 rounded-full object-cover"
-          />
+        <div className="mt-1">
+          <p className="text-white tracking-wider text-[16px] leading-[1.6] line-clamp-5">
+            {testimonial}
+          </p>
 
-          <div className="flex flex-col">
-            <p className="text-white font-medium text-[16px]">
-              <span className="blue-text-gradient">@</span> {name}
-            </p>
-            <p className="mt-1 text-secondary text-[12px]">{designation}</p>
+          <div className="mt-5 flex items-center gap-3">
+            <img
+              src={image}
+              alt={`feedback_by-${name}`}
+              className="w-10 h-10 rounded-full object-cover"
+            />
+
+            <div className="flex flex-col">
+              <p className="text-white font-medium text-[16px]">
+                <span className="blue-text-gradient">@</span> {name}
+              </p>
+              <p className="mt-1 text-secondary text-[12px]">{designation}</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  },
+);
+FeedbackCard.displayName = "FeedbackCard";
 
 const Feedbacks = () => {
-  // Render the set twice back-to-back so translateY(-50%) loops seamlessly
+  // Render the set twice back-to-back so the track can loop seamlessly
   const loopedTestimonials = [...testimonials, ...testimonials];
+
+  const trackRef = useRef(null);
+  const repeatMarkerRef = useRef(null); // first card of the 2nd copy
+
+  useLayoutEffect(() => {
+    const track = trackRef.current;
+    const marker = repeatMarkerRef.current;
+    if (!track || !marker) return;
+
+    const measure = () => {
+      // Distance to the start of the duplicated copy is the exact loop
+      // length, gaps included — a plain -50% is off by half a gap unless
+      // the content height happens to divide evenly, which is what caused
+      // the visible snap at the loop point.
+      const distance = marker.offsetTop - track.offsetTop;
+      if (distance > 0) {
+        track.style.setProperty("--marquee-distance", `-${distance}px`);
+        track.style.animationDuration = `${distance / MARQUEE_SPEED_PX_S}s`;
+      }
+    };
+
+    measure();
+
+    const resizeObserver = new ResizeObserver(measure);
+    resizeObserver.observe(track);
+
+    return () => resizeObserver.disconnect();
+  }, []);
 
   return (
     <div className={`mt-12 bg-black-100 rounded-[20px]`}>
@@ -56,12 +92,13 @@ const Feedbacks = () => {
       <div className={`-mt-20 pb-8 ${styles.paddingX}`}>
         {/* Vertical marquee: continuous auto-scroll, pauses in place on hover/focus */}
         <div className="marquee-viewport marquee-fade relative h-[420px] sm:h-[500px] lg:h-[560px] overflow-hidden">
-          <div
-            className="marquee-track flex flex-col gap-6"
-            style={{ animationDuration: `${MARQUEE_DURATION_S}s` }}
-          >
+          <div ref={trackRef} className="marquee-track flex flex-col gap-6">
             {loopedTestimonials.map((card, i) => (
-              <FeedbackCard key={`${card.name}-${i}`} {...card} />
+              <FeedbackCard
+                key={`${card.name}-${i}`}
+                ref={i === testimonials.length ? repeatMarkerRef : null}
+                {...card}
+              />
             ))}
           </div>
         </div>

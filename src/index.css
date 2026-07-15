@@ -124,7 +124,10 @@
     transform: translateY(0);
   }
   to {
-    transform: translateY(-50%);
+    /* set to the exact pixel height of one copy (incl. the connecting gap) via JS;
+       a plain -50% is off by half a gap whenever items don't divide evenly,
+       which is what caused the visible snap at the loop point */
+    transform: translateY(var(--marquee-distance, -50%));
   }
 }
 

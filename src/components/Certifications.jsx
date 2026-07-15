@@ -1,4 +1,5 @@
 import React from "react";
+
 import { motion } from "framer-motion";
 
 import { certifications } from "../constants";
@@ -11,12 +12,7 @@ const CertificationCard = ({ index, name, issuer, date, badge, link }) => (
     variants={fadeIn("up", "spring", index * 0.3, 0.75)}
     className="group"
   >
-    <a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block"
-    >
+    <a href={link} target="_blank" rel="noopener noreferrer" className="block">
       <div className="relative bg-tertiary rounded-2xl border border-white-100/5 p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 sm:gap-8 hover:border-white-100/15 transition-all duration-500 hover:shadow-[0_0_40px_rgba(118,75,162,0.08)]">
         {/* Badge image */}
         <div className="relative flex-shrink-0">

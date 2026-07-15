@@ -191,7 +191,8 @@ const testimonials = [
     name: "Bret Anno",
     designation: "Director, Software Engineering",
     company: "Zebra Technologies",
-    image: "https://ui-avatars.com/api/?name=Bret+Anno&background=0D8ABC&color=fff&size=128",
+    image:
+      "https://ui-avatars.com/api/?name=Bret+Anno&background=0D8ABC&color=fff&size=128",
   },
   {
     testimonial:
@@ -199,7 +200,8 @@ const testimonials = [
     name: "Manjunath Gundurao",
     designation: "Engineering Manager",
     company: "Zebra Technologies",
-    image: "https://ui-avatars.com/api/?name=Manjunath+Gundurao&background=2E7D32&color=fff&size=128",
+    image:
+      "https://ui-avatars.com/api/?name=Manjunath+Gundurao&background=2E7D32&color=fff&size=128",
   },
   {
     testimonial:
@@ -207,7 +209,8 @@ const testimonials = [
     name: "Anjali S Acharya",
     designation: "DevOps | Network Specialist",
     company: "Peer & Colleague",
-    image: "https://ui-avatars.com/api/?name=Anjali+Acharya&background=7B1FA2&color=fff&size=128",
+    image:
+      "https://ui-avatars.com/api/?name=Anjali+Acharya&background=7B1FA2&color=fff&size=128",
   },
   {
     testimonial:
@@ -215,7 +218,17 @@ const testimonials = [
     name: "Abhilash K",
     designation: "Software Architect",
     company: "Zebra Technologies",
-    image: "https://ui-avatars.com/api/?name=Abhilash+K&background=C62828&color=fff&size=128",
+    image:
+      "https://ui-avatars.com/api/?name=Abhilash+K&background=C62828&color=fff&size=128",
+  },
+  {
+    testimonial:
+      "I worked with Keril as he was handling our trading application development and the features keril built are exceptionally well. Keril has exceptional knowledge of development and he understands the domain and severity very well. Grasping power is very good.",
+    name: "Harsh Shah",
+    designation: "Senior Manager Product",
+    company: "5paisa, Ex. IIFL",
+    image:
+      "https://ui-avatars.com/api/?name=Harsh+Shah&background=00695C&color=fff&size=128",
   },
 ];
 
@@ -295,4 +308,11 @@ const certifications = [
   },
 ];
 
-export { services, skills, experiences, testimonials, projects, certifications };
+export {
+  services,
+  skills,
+  experiences,
+  testimonials,
+  projects,
+  certifications,
+};

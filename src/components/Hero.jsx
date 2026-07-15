@@ -1,8 +1,8 @@
 import React from "react";
+
+import codechefIcon from "../assets/codechef.jpeg";
 import githubIcon from "../assets/github.jpeg";
 import linkedinIcon from "../assets/linkedin.png";
-import codechefIcon from "../assets/codechef.jpeg";
-
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 
@@ -31,7 +31,11 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="z-10"
             >
-              <img src={githubIcon} alt="github" className="w-9 h-9 object-cover rounded-full hover:scale-110 transition-transform cursor-pointer" />
+              <img
+                src={githubIcon}
+                alt="github"
+                className="w-9 h-9 object-cover rounded-full hover:scale-110 transition-transform cursor-pointer"
+              />
             </a>
             <a
               href="https://linkedin.com/in/keril-patel"
@@ -39,7 +43,11 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="z-10"
             >
-              <img src={linkedinIcon} alt="linkedin" className="w-9 h-9 object-cover rounded-full hover:scale-110 transition-transform cursor-pointer" />
+              <img
+                src={linkedinIcon}
+                alt="linkedin"
+                className="w-9 h-9 object-cover rounded-full hover:scale-110 transition-transform cursor-pointer"
+              />
             </a>
             <a
               href="https://www.codechef.com/users/kerilpatel"
@@ -47,7 +55,11 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="z-10"
             >
-              <img src={codechefIcon} alt="codechef" className="w-9 h-9 object-cover rounded-full hover:scale-110 transition-transform cursor-pointer" />
+              <img
+                src={codechefIcon}
+                alt="codechef"
+                className="w-9 h-9 object-cover rounded-full hover:scale-110 transition-transform cursor-pointer"
+              />
             </a>
           </div>
         </div>

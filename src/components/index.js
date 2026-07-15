@@ -23,4 +23,3 @@ export {
   ComputersCanvas,
   StarsCanvas,
 };
-

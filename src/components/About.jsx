@@ -81,9 +81,9 @@ const About = () => {
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
         Every day, I'm driven by a passion for excellence and a desire to keep
-        improving as a software developer. The tech landscape is always evolving,
-        and I'm committed to growing along with it, expanding my knowledge and
-        skills to stay at the forefront of the industry.
+        improving as a software developer. The tech landscape is always
+        evolving, and I'm committed to growing along with it, expanding my
+        knowledge and skills to stay at the forefront of the industry.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">

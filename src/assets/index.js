@@ -8,11 +8,11 @@ import jobit from "./jobit.png";
 import logo from "./logo.svg";
 import menu from "./menu.svg";
 import mobile from "./mobile.png";
+import nvidiaGenAiBadge from "./nvidia-genai-badge.png";
 import office from "./office.png";
 import school from "./school.png";
 import tripguide from "./tripguide.png";
 import web from "./web.png";
-import nvidiaGenAiBadge from "./nvidia-genai-badge.png";
 
 export {
   logo,

@@ -1,6 +1,7 @@
 import React from "react";
 
 import { motion } from "framer-motion";
+
 import { Blocks, Code2, Layers, Plug, Sparkles } from "lucide-react";
 
 import { skills } from "../constants";
