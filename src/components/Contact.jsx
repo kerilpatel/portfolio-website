@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
+import { trackEvent } from "../utils/analytics";
 import { slideIn } from "../utils/motion";
 import { EarthCanvas } from "./canvas";
 
@@ -36,6 +37,8 @@ const Contact = () => {
       `New Inquiry from Portfolio Website - ${form.name}`,
     );
     const body = encodeURIComponent(`Hi, I am ${form.name}\n\n${form.message}`);
+
+    trackEvent("contact_submit", { method: "mailto" });
 
     window.location.href = `mailto:kerilpatel@outlook.com?subject=${subject}&body=${body}`;
 
