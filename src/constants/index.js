@@ -292,6 +292,31 @@ const projects = [
     source_code_link: "https://github.com/kerilpatel/logator",
     live_demo_link: "https://logator.kerilpatel.com",
   },
+  {
+    name: "Claude Plugin Marketplace",
+    description:
+      "Personal marketplace of Claude Code plugins, installable via /plugin, packaging agentic Skills that restructure and polish LaTeX documents for a target context, compile them to PDF, and push versioned results to GitHub.",
+    tags: [
+      {
+        name: "claude-code",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "agentic-ai",
+        color: "green-text-gradient",
+      },
+      {
+        name: "plugins",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "latex",
+        color: "orange-text-gradient",
+      },
+    ],
+    image: projectPlaceholder,
+    source_code_link: "https://github.com/kerilpatel/my-claude-plugin-marketplace",
+  },
 ];
 
 const certifications = [
