@@ -1,14 +1,12 @@
 import {
   backend,
-  carrent,
   college,
   creator,
-  jobit,
   mobile,
   nvidiaGenAiBadge,
   office,
+  projectPlaceholder,
   school,
-  tripguide,
   web,
 } from "../assets";
 
@@ -243,67 +241,56 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Lumen",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "AI document workspace with bring-your-own-key (BYOK) LLM support and human-in-the-loop, diff-preview AI edits, so every AI change is reviewed before it lands in your document.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "typescript",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "express",
         color: "pink-text-gradient",
       },
+      {
+        name: "tailwindcss",
+        color: "orange-text-gradient",
+      },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: projectPlaceholder,
+    source_code_link: "https://github.com/kerilpatel/lumen",
+    live_demo_link: "https://lumen.kerilpatel.com",
   },
   {
-    name: "Job IT",
+    name: "Logator",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Log aggregation platform with replay-resistant HMAC ingest, a non-blocking logging SDK, and a live-tail dashboard for watching application logs stream in real time.",
     tags: [
+      {
+        name: "python",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "django",
+        color: "green-text-gradient",
+      },
       {
         name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
         color: "pink-text-gradient",
       },
-    ],
-    image: jobit,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
       {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
+        name: "docker",
+        color: "orange-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: projectPlaceholder,
+    source_code_link: "https://github.com/kerilpatel/logator",
+    live_demo_link: "https://logator.kerilpatel.com",
   },
 ];
 
