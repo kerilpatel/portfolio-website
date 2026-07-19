@@ -28,6 +28,10 @@ export const navLinks = [
     title: "Certifications",
   },
   {
+    id: "achievements",
+    title: "Achievements",
+  },
+  {
     id: "projects",
     title: "Projects",
   },
@@ -329,6 +333,25 @@ const certifications = [
   },
 ];
 
+const achievements = [
+  {
+    title: "2x Secure Code Warrior Tournament Winner",
+    context: "Zebra Technologies",
+    description:
+      "Won the company-wide Secure Code Warrior tournament twice, demonstrating strong secure coding practices and application security awareness.",
+    icon: "shield",
+  },
+  {
+    title: "Best Presentation Award",
+    context: "Technical Conference",
+    description:
+      "Received the Best Presentation Award at a technical conference for presenting a published research paper.",
+    icon: "trophy",
+    link: "https://tijer.org/tijer/viewpaperforall.php?paper=TIJERA001040",
+    linkText: "View Paper",
+  },
+];
+
 export {
   services,
   skills,
@@ -336,4 +359,5 @@ export {
   testimonials,
   projects,
   certifications,
+  achievements,
 };
