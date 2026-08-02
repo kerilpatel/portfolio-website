@@ -162,10 +162,8 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "Jul 2023 - Feb 2024",
     points: [
-      "Built two Flutter apps with clean architecture and reusable widgets, following design guidelines for a scalable codebase.",
-      "Developed core features for 5Paisa, a high-performance stock trading app for IIFL Holdings Ltd., including biometric and TOTP authentication, dynamic watchlists, and optimized order forms using state management for real-time data via REST APIs and sockets.",
-      "Enhanced Jeet, a patient engagement app for Lupin Ltd., by integrating prescription uploads, medication reminders, and interactive in-app games built on the Flame engine with Bloc state management, improving user engagement and retention.",
-      "Triaged and resolved crashes and performance issues reported in Sentry, raising crash-free sessions to 97%.",
+      "Built and shipped two applications handling both frontend and backend development from scratch in a fast-paced startup environment, working directly with clients to turn shifting requirements into working features.",
+      "Owned development end-to-end — from implementation to client feedback loops — adapting quickly in a small-team, early-stage setting.",
     ],
   },
   {
@@ -175,24 +173,20 @@ const experiences = [
     iconBg: "#383E56",
     date: "Mar 2024 - Jun 2026",
     points: [
-      "Developed a Dart SDK implementing printer communication features, using Method Channels to execute native code and access platform-specific APIs for a scalable interface across Android, iOS, and Windows in the Flutter app.",
-      "Implemented Android Intent-based APIs enabling third-party apps to trigger direct print passthrough and query real-time printer data without launching the Zebra Print app.",
-      "Integrated Box & Dropbox cloud storage into the Zebra Print app using OAuth 2.0, with offline caching for file management.",
-      "Implemented comprehensive Unit Testing for Flutter and native bridges, maintaining 85% code coverage for SDKs and apps.",
-      "Built and deployed a RAG chatbot over SDK and printer documentation on a Django backend, vectorized into Vector Stores and queried via OpenAI APIs with function-calling, served through a Next.js interface for customer self-service.",
-      "Built a Claude Code plugin (Skills + MCP) with Jira, Confluence, and GitHub integrations that turns initiatives into structured Jira Epics and Stories, cutting story-writing errors and PM rework by 35–40%.",
-      "Developed an AI agent for automated release notes, triggered by GitHub Actions on production merges, correlating commit history with linked Jira stories via MCP to publish structured release summaries without manual effort.",
+      "Built a Flutter SDK & Mobile application for supporting our printers across platforms.",
+      "Developed a web application, owning both frontend and backend - using Next.js and Django, covering from design through deployment.",
+      "Designed and shipped GenAI-powered features for customer-facing and internal tools, including RAG assistant, MCP, multi agents workflows.",
     ],
   },
   {
-    title: "Software Engineer, II",
+    title: "Software Engineer, Professional II",
     company_name: "Zebra Technologies",
     icon: office,
     iconBg: "#383E56",
     date: "Jul 2026 - Present",
     points: [
-      "Built an offline auto-configuration feature backed by SQLite, with cross-platform UI parity across platforms.",
-      "Mentoring interns on agentic workflows, collaborating on developing Claude Code plugins, MCP integrations, and LLM Evals.",
+      "Promoted to Software Engineer II, expanding focus into cross-platform and LLM-based development.",
+      "Mentoring an intern on agentic workflows, MCP development, and LLM evaluations.",
     ],
   },
 ];

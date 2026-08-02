@@ -1,39 +1,32 @@
 import React from "react";
-import { Tilt } from "react-tilt";
 
 import { motion } from "framer-motion";
 
-import { services } from "../constants";
+import developerActivity from "../assets/developer-activity.svg";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ServiceCard = ({ index, title, icon }) => (
-  <Tilt className="xs:w-[250px] w-full">
-    <motion.div
-      variants={fadeIn("right", "spring", index * 0.2, 0.75)}
-      className="w-full green-pink-gradient p-[1px] rounded-[20px]"
-    >
-      <div
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
-      >
-        <img
-          src={icon}
-          alt="web-development"
-          className="w-16 h-16 object-contain"
-        />
+const highlights = [
+  { label: "3+ Years", detail: "Frontend, Backend & Applied AI" },
+  { label: "Software Engineer II", detail: "Zebra Technologies" },
+  { label: "GenAI Certified", detail: "Applied to production work" },
+  { label: "B.E. Computer Science", detail: "RV Institute, Bengaluru" },
+];
 
-        <h3 className="text-white text-[20px] font-bold text-center">
-          {title}
-        </h3>
-      </div>
-    </motion.div>
-  </Tilt>
+const OverviewIllustration = () => (
+  <motion.div
+    variants={fadeIn("right", "spring", 0.1, 0.75)}
+    className="w-full max-w-[420px] mx-auto"
+  >
+    <motion.img
+      src={developerActivity}
+      alt=""
+      animate={{ y: [0, -14, 0] }}
+      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      className="w-full h-auto"
+    />
+  </motion.div>
 );
 
 const About = () => {
@@ -44,52 +37,55 @@ const About = () => {
         <h2 className={styles.sectionHeadText}>Overview.</h2>
       </motion.div>
 
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
-      >
-        Hi, I'm Keril, currently working as a Software Engineer II at Zebra
-        Technologies. With 3+ years of experience across mobile, web, and
-        backend systems, I've had the opportunity to build impactful solutions
-        in FinTech, HealthTech, and enterprise workflow automation.
-      </motion.p>
+      <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="order-2 lg:order-1">
+          <OverviewIllustration />
+        </div>
 
-      <motion.p
-        variants={fadeIn("", "", 0.2, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
-      >
-        While my background is rooted in Flutter and cross-platform native app
-        development, my recent focus has expanded deeply into Generative AI
-        integrations, RAG systems, and AI Agents. I enjoy the challenge of
-        building clean, scalable architectures and blending LLM orchestration
-        with user-friendly interfaces.
-      </motion.p>
+        <div className="order-1 lg:order-2">
+          <motion.p
+            variants={fadeIn("left", "", 0.1, 1)}
+            className="text-secondary text-[17px] max-w-2xl leading-[30px]"
+          >
+            I'm a software engineer with experience across frontend, backend,
+            and applied AI. Over the past 3 years I've built a Flutter SDK
+            and mobile app used across platforms, a full-stack web app with
+            Next.js and Django, and GenAI-powered features — including a RAG
+            assistant, MCP integrations, and multi-agent workflows — for
+            customer-facing and internal tools. I'm certified in Generative
+            AI and have applied it directly to production work.
+          </motion.p>
 
-      <motion.p
-        variants={fadeIn("", "", 0.3, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
-      >
-        I graduated with a Bachelor of Engineering in Computer Science from RV
-        Institute of Technology and Management in Bengaluru. Since then, my work
-        has ranged from developing mission-critical SDKs and offline features to
-        architecting GenAI pipelines that reduce manual rework and improve team
-        efficiency.
-      </motion.p>
+          <motion.p
+            variants={fadeIn("left", "", 0.2, 1)}
+            className="mt-4 text-secondary text-[17px] max-w-2xl leading-[30px]"
+          >
+            I started my career building two client-facing applications from
+            scratch at an early-stage startup, then spent over 2.5 years at
+            Zebra Technologies, where I was promoted to Software Engineer II.
+            I currently mentor an intern on agentic workflows, MCP
+            development, and LLM evaluation.
+          </motion.p>
 
-      <motion.p
-        variants={fadeIn("", "", 0.4, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
-      >
-        Every day, I'm driven by a passion for excellence and a desire to keep
-        improving as a software developer. The tech landscape is always
-        evolving, and I'm committed to growing along with it, expanding my
-        knowledge and skills to stay at the forefront of the industry.
-      </motion.p>
-
-      <div className="mt-20 flex flex-wrap gap-10">
-        {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
-        ))}
+          <motion.div
+            variants={fadeIn("left", "", 0.3, 1)}
+            className="mt-6 grid grid-cols-1 xs:grid-cols-2 gap-4"
+          >
+            {highlights.map((item) => (
+              <div
+                key={item.label}
+                className="bg-tertiary rounded-xl px-5 py-4 border border-white/5"
+              >
+                <p className="text-white text-[15px] font-semibold">
+                  {item.label}
+                </p>
+                <p className="text-secondary text-[13px] mt-1">
+                  {item.detail}
+                </p>
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </>
   );

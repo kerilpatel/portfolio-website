@@ -16,7 +16,7 @@ const CATEGORY_META = {
   Frameworks: { icon: Layers, accent: "#38ef7d" },
   "Generative AI": { icon: Sparkles, accent: "#804dee" },
   "Architecture & Concepts": { icon: Blocks, accent: "#f5af19" },
-  "Integrations & APIs": { icon: Plug, accent: "#ec008c" },
+  "APIs & Tools": { icon: Plug, accent: "#ec008c" },
 };
 
 const SkillCard = ({ title, items, index }) => {
