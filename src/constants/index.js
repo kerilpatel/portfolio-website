@@ -138,21 +138,8 @@ const experiences = [
     date: "2019 - 2023",
     points: [
       "Graduated with a CGPA of 7.83/10",
-      "For engineering major project, Developed 'SmartSell', a retail sales analysis dashboard using Python and Streamlit, implementing machine learning algorithms for personalized recommendations",
-      "Founding Member and Head-Coordinator of The Entrepreneurship Cell - Established the College Society with a motive to spread a word about Entrepreneurship and cultivate problem solving skills among the students of RVITM",
-      "Organized and managed events with a team of 30+ coordinators, collaborating with various college societies",
-    ],
-  },
-  {
-    title: "Intern",
-    company_name: "Zebra Technologies",
-    icon: office,
-    iconBg: "#383E56",
-    date: "Jan 2023 - Jun 2023",
-    points: [
-      "Assisted with troubleshooting and bug fixing in existing codebase",
-      "Worked on cross-platform mobile application development using Flutter and Xamarin",
-      "Participated in daily stand-up meetings, code reviews, and other team meetings to discuss project progress and identify areas for improvement",
+      "Founding Member and Head-Coordinator of The Entrepreneurship Cell - Established the College Society with a motive to spread a word about Entrepreneurship and cultivate problem solving skills among the students of RVITM, Organized and managed events with a team of 30+ coordinators.",
+      "For engineering major project, Developed 'SmartSell', a retail sales analysis dashboard using Python and Streamlit, implementing machine learning algorithms for personalised recommendations",
     ],
   },
   {
