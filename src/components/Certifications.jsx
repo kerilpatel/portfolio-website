@@ -89,7 +89,7 @@ const Certifications = () => {
         continuous learning.
       </motion.p>
 
-      <div className="mt-12 flex flex-col gap-6 max-w-3xl">
+      <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-6">
         {certifications.map((cert, index) => (
           <CertificationCard key={cert.name} index={index} {...cert} />
         ))}

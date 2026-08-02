@@ -1,4 +1,5 @@
 import {
+  awsCcpBadge,
   backend,
   claudeMarketplace,
   college,
@@ -303,6 +304,13 @@ const projects = [
 ];
 
 const certifications = [
+  {
+    name: "AWS Certified Cloud Practitioner",
+    issuer: "Amazon Web Services Training and Certification",
+    date: "Sep 24, 2021",
+    badge: awsCcpBadge,
+    link: "https://www.credly.com/badges/32634e83-15e7-47e8-94df-d86af51046c3/public_url",
+  },
   {
     name: "NVIDIA-Certified Associate: Generative AI LLMs",
     issuer: "NVIDIA",

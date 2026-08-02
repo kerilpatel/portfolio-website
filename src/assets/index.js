@@ -1,3 +1,4 @@
+import awsCcpBadge from "./aws-ccp-badge.png";
 import backend from "./backend.png";
 import claudeMarketplace from "./claude-marketplace.png";
 import close from "./close.svg";
@@ -17,6 +18,7 @@ import web from "./web.png";
 
 export {
   logo,
+  awsCcpBadge,
   backend,
   creator,
   mobile,
