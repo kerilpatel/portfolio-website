@@ -299,7 +299,8 @@ const projects = [
       },
     ],
     image: claudeMarketplace,
-    source_code_link: "https://github.com/kerilpatel/my-claude-plugin-marketplace",
+    source_code_link:
+      "https://github.com/kerilpatel/my-claude-plugin-marketplace",
   },
 ];
 

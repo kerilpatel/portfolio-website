@@ -19,7 +19,10 @@ const ProjectCard = ({
   live_demo_link,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.2, 0.75)} className="flex">
+    <motion.div
+      variants={fadeIn("up", "spring", index * 0.2, 0.75)}
+      className="flex"
+    >
       <Tilt
         options={{
           max: 45,

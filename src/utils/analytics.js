@@ -19,7 +19,9 @@ export const initGA = () => {
   if (initialized) return;
   if (!import.meta.env.PROD) return;
   if (!MEASUREMENT_ID) {
-    console.warn("[analytics] VITE_GA_MEASUREMENT_ID is not set — GA disabled.");
+    console.warn(
+      "[analytics] VITE_GA_MEASUREMENT_ID is not set — GA disabled.",
+    );
     return;
   }
 

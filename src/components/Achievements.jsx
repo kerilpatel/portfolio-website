@@ -24,7 +24,15 @@ const icons = {
   ),
 };
 
-const AchievementCard = ({ index, title, context, description, icon, link, linkText }) => {
+const AchievementCard = ({
+  index,
+  title,
+  context,
+  description,
+  icon,
+  link,
+  linkText,
+}) => {
   const card = (
     <div className="h-full relative bg-tertiary rounded-2xl border border-white-100/5 p-6 sm:p-8 flex flex-col items-center sm:items-start gap-5 hover:border-white-100/15 transition-all duration-500 hover:shadow-[0_0_40px_rgba(118,75,162,0.08)]">
       <div className="w-14 h-14 rounded-xl bg-black-200/50 ring-1 ring-white-100/5 group-hover:ring-white-100/10 flex justify-center items-center transition-all duration-500">

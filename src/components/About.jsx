@@ -48,12 +48,12 @@ const About = () => {
             className="text-secondary text-[17px] max-w-2xl leading-[30px]"
           >
             I'm a software engineer with experience across frontend, backend,
-            and applied AI. Over the past 3 years I've built a Flutter SDK
-            and mobile app used across platforms, a full-stack web app with
-            Next.js and Django, and GenAI-powered features — including a RAG
-            assistant, MCP integrations, and multi-agent workflows — for
-            customer-facing and internal tools. I'm certified in Generative
-            AI and have applied it directly to production work.
+            and applied AI. Over the past 3 years I've built a Flutter SDK and
+            mobile app used across platforms, a full-stack web app with Next.js
+            and Django, and GenAI-powered features — including a RAG assistant,
+            MCP integrations, and multi-agent workflows — for customer-facing
+            and internal tools. I'm certified in Generative AI and have applied
+            it directly to production work.
           </motion.p>
 
           <motion.p
@@ -62,9 +62,9 @@ const About = () => {
           >
             I started my career building two client-facing applications from
             scratch at an early-stage startup, then spent over 2.5 years at
-            Zebra Technologies, where I was promoted to Software Engineer II.
-            I currently mentor an intern on agentic workflows, MCP
-            development, and LLM evaluation.
+            Zebra Technologies, where I was promoted to Software Engineer II. I
+            currently mentor an intern on agentic workflows, MCP development,
+            and LLM evaluation.
           </motion.p>
 
           <motion.div
@@ -79,9 +79,7 @@ const About = () => {
                 <p className="text-white text-[15px] font-semibold">
                   {item.label}
                 </p>
-                <p className="text-secondary text-[13px] mt-1">
-                  {item.detail}
-                </p>
+                <p className="text-secondary text-[13px] mt-1">{item.detail}</p>
               </div>
             ))}
           </motion.div>
