@@ -9,7 +9,7 @@ import Hero from "./Hero";
 import Navbar from "./Navbar";
 import Tech from "./Tech";
 import Works from "./Works";
-import { ComputersCanvas, EarthCanvas, StarsCanvas } from "./canvas";
+import { EarthCanvas, StarsCanvas } from "./canvas";
 
 export {
   Hero,
@@ -24,6 +24,5 @@ export {
   Contact,
   Footer,
   EarthCanvas,
-  ComputersCanvas,
   StarsCanvas,
 };

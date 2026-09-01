@@ -24,17 +24,9 @@
 }
 
 .black-gradient {
-  background: #000000; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #434343,
-    #000000
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #434343,
-    #000000
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #000000;
+  background: -webkit-linear-gradient(to right, #434343, #000000);
+  background: linear-gradient(to right, #434343, #000000);
 }
 
 .violet-gradient {
@@ -47,86 +39,43 @@
   );
 }
 
-.green-pink-gradient {
-  background: "#00cea8";
-  background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-}
-
 .orange-text-gradient {
-  background: #f12711; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #f12711,
-    #f5af19
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    #f12711,
-    #f5af19
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #f12711;
+  background: -webkit-linear-gradient(to top, #f12711, #f5af19);
+  background: linear-gradient(to top, #f12711, #f5af19);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .green-text-gradient {
-  background: #11998e; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #11998e,
-    #38ef7d
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    #11998e,
-    #38ef7d
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #11998e;
+  background: -webkit-linear-gradient(to top, #11998e, #38ef7d);
+  background: linear-gradient(to top, #11998e, #38ef7d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .blue-text-gradient {
-  /* background: -webkit-linear-gradient(#eee, #333); */
-  background: #56ccf2; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #2f80ed,
-    #56ccf2
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    #2f80ed,
-    #56ccf2
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #56ccf2;
+  background: -webkit-linear-gradient(to top, #2f80ed, #56ccf2);
+  background: linear-gradient(to top, #2f80ed, #56ccf2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .pink-text-gradient {
-  background: #ec008c; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #ec008c,
-    #fc6767
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    #ec008c,
-    #fc6767
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #ec008c;
+  background: -webkit-linear-gradient(to top, #ec008c, #fc6767);
+  background: linear-gradient(to top, #ec008c, #fc6767);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* vertical testimonial marquee */
 @keyframes scroll-vertical {
   from {
     transform: translateY(0);
   }
   to {
-    /* set to the exact pixel height of one copy (incl. the connecting gap) via JS;
-       a plain -50% is off by half a gap whenever items don't divide evenly,
-       which is what caused the visible snap at the loop point */
     transform: translateY(var(--marquee-distance, -50%));
   }
 }
@@ -163,7 +112,100 @@
   }
 }
 
-/* canvas- styles */
+.hero-mascot .mascot-eyebrow {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.35s ease;
+}
+.hero-mascot #character.state-typing .mascot-eyebrowL {
+  transform: translateY(4px) rotate(-8deg);
+}
+.hero-mascot #character.state-typing .mascot-eyebrowR {
+  transform: translateY(4px) rotate(8deg);
+}
+.hero-mascot #character.state-alert .mascot-eyebrowL {
+  transform: translateY(-6px) rotate(3deg);
+}
+.hero-mascot #character.state-alert .mascot-eyebrowR {
+  transform: translateY(-6px) rotate(-3deg);
+}
+
+.hero-mascot .eye-group {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.09s ease;
+}
+.hero-mascot .eye-group.blink {
+  transform: scaleY(0.08);
+}
+
+.hero-mascot .mascot-arm {
+  transform-box: fill-box;
+  transform-origin: top center;
+}
+.hero-mascot #character.state-typing .mascot-armL {
+  animation: mascotBobL 0.5s ease-in-out infinite;
+}
+.hero-mascot #character.state-typing .mascot-armR {
+  animation: mascotBobR 0.5s ease-in-out infinite 0.25s;
+}
+@keyframes mascotBobL {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+@keyframes mascotBobR {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+
+.hero-mascot .mascot-float {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: mascotDrift 4.5s ease-in-out infinite;
+}
+.hero-mascot .mascot-float-a {
+  animation-duration: 5.5s;
+}
+.hero-mascot .mascot-float-b {
+  animation-duration: 3.8s;
+  animation-delay: 0.6s;
+}
+.hero-mascot .mascot-float-c {
+  animation-duration: 4.8s;
+  animation-delay: 1.2s;
+}
+@keyframes mascotDrift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-mascot .eye-group,
+  .hero-mascot .mascot-eyebrow {
+    transition: none !important;
+  }
+  .hero-mascot .mascot-armL,
+  .hero-mascot .mascot-armR,
+  .hero-mascot .mascot-float {
+    animation: none !important;
+  }
+}
+
 .canvas-loader {
   font-size: 10px;
   width: 1em;
