@@ -47,7 +47,6 @@ const FeedbackCard = React.forwardRef(
 FeedbackCard.displayName = "FeedbackCard";
 
 const Feedbacks = () => {
-  // Render the set twice back-to-back so the track can loop seamlessly
   const loopedTestimonials = [...testimonials, ...testimonials];
 
   const trackRef = useRef(null);
@@ -59,10 +58,6 @@ const Feedbacks = () => {
     if (!track || !marker) return;
 
     const measure = () => {
-      // Distance to the start of the duplicated copy is the exact loop
-      // length, gaps included — a plain -50% is off by half a gap unless
-      // the content height happens to divide evenly, which is what caused
-      // the visible snap at the loop point.
       const distance = marker.offsetTop - track.offsetTop;
       if (distance > 0) {
         track.style.setProperty("--marquee-distance", `-${distance}px`);
@@ -90,7 +85,6 @@ const Feedbacks = () => {
       </div>
 
       <div className={`-mt-20 pb-8 ${styles.paddingX}`}>
-        {/* Vertical marquee: continuous auto-scroll, pauses in place on hover/focus */}
         <div className="marquee-viewport marquee-fade relative h-[420px] sm:h-[500px] lg:h-[560px] overflow-hidden">
           <div ref={trackRef} className="marquee-track flex flex-col gap-6">
             {loopedTestimonials.map((card, i) => (
@@ -103,7 +97,6 @@ const Feedbacks = () => {
           </div>
         </div>
 
-        {/* LinkedIn link */}
         <div className="flex justify-center mt-10">
           <a
             href="https://www.linkedin.com/in/keril-patel"

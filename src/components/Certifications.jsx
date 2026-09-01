@@ -14,7 +14,6 @@ const CertificationCard = ({ index, name, issuer, date, badge, link }) => (
   >
     <a href={link} target="_blank" rel="noopener noreferrer" className="block">
       <div className="relative bg-tertiary rounded-2xl border border-white-100/5 p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 sm:gap-8 hover:border-white-100/15 transition-all duration-500 hover:shadow-[0_0_40px_rgba(118,75,162,0.08)]">
-        {/* Badge image */}
         <div className="relative flex-shrink-0">
           <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-xl overflow-hidden bg-black-200/50 p-3 ring-1 ring-white-100/5 group-hover:ring-white-100/10 transition-all duration-500">
             <img
@@ -25,7 +24,6 @@ const CertificationCard = ({ index, name, issuer, date, badge, link }) => (
           </div>
         </div>
 
-        {/* Info */}
         <div className="flex-1 text-center sm:text-left">
           <h3 className="text-white text-[18px] sm:text-[20px] font-semibold leading-snug tracking-wide">
             {name}
@@ -33,7 +31,6 @@ const CertificationCard = ({ index, name, issuer, date, badge, link }) => (
           <p className="text-secondary text-[14px] mt-2">{issuer}</p>
           <p className="text-secondary/60 text-[13px] mt-1">{date}</p>
 
-          {/* Subtle verify link indicator */}
           <span className="inline-flex items-center gap-1.5 mt-4 text-[13px] text-secondary/50 group-hover:text-secondary transition-colors duration-300">
             <svg
               className="w-3.5 h-3.5"
@@ -52,7 +49,6 @@ const CertificationCard = ({ index, name, issuer, date, badge, link }) => (
           </span>
         </div>
 
-        {/* External link arrow — visible on hover */}
         <div className="hidden sm:flex absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <svg
             className="w-4 h-4 text-secondary/40"

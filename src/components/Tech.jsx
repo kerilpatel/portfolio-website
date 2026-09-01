@@ -9,8 +9,6 @@ import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
 
-// Fixed, closed set of 5 categories — icon + accent are presentation-only,
-// so they live here rather than in the data-only skills constant.
 const CATEGORY_META = {
   Languages: { icon: Code2, accent: "#56ccf2" },
   Frameworks: { icon: Layers, accent: "#38ef7d" },
