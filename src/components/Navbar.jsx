@@ -6,7 +6,6 @@ import { navLinks } from "../constants";
 import { styles } from "../styles";
 
 const Navbar = () => {
-  const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
 
   return (
@@ -17,10 +16,7 @@ const Navbar = () => {
         <Link
           to="/"
           className="flex items-center gap-2"
-          onClick={() => {
-            setActive("");
-            window.scrollTo(0, 0);
-          }}
+          onClick={() => window.scrollTo(0, 0)}
         >
           <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
           <p className="text-white text-[18px] font-bold cursor-pointer flex">
@@ -33,10 +29,7 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <li
               key={link.id}
-              className={`${
-                active === link.title ? "text-white" : "text-secondary"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
-              onClick={() => setActive(link.title)}
+              className="text-secondary hover:text-white text-[18px] font-medium cursor-pointer"
             >
               <a href={`#${link.id}`}>{link.title}</a>
             </li>
@@ -60,13 +53,8 @@ const Navbar = () => {
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
-                  className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                    active === nav.title ? "text-white" : "text-secondary"
-                  }`}
-                  onClick={() => {
-                    setToggle(!toggle);
-                    setActive(nav.title);
-                  }}
+                  className="font-poppins font-medium cursor-pointer text-[16px] text-secondary hover:text-white"
+                  onClick={() => setToggle(!toggle)}
                 >
                   <a href={`#${nav.id}`}>{nav.title}</a>
                 </li>
