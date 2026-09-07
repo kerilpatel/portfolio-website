@@ -112,97 +112,43 @@
   }
 }
 
-.hero-mascot .mascot-eyebrow {
-  transform-box: fill-box;
-  transform-origin: center;
-  transition: transform 0.35s ease;
-}
-.hero-mascot #character.state-typing .mascot-eyebrowL {
-  transform: translateY(4px) rotate(-8deg);
-}
-.hero-mascot #character.state-typing .mascot-eyebrowR {
-  transform: translateY(4px) rotate(8deg);
-}
-.hero-mascot #character.state-alert .mascot-eyebrowL {
-  transform: translateY(-6px) rotate(3deg);
-}
-.hero-mascot #character.state-alert .mascot-eyebrowR {
-  transform: translateY(-6px) rotate(-3deg);
+.hero-id-card {
+  perspective: 1200px;
+  cursor: grab;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.hero-mascot .eye-group {
-  transform-box: fill-box;
-  transform-origin: center;
-  transition: transform 0.09s ease;
-}
-.hero-mascot .eye-group.blink {
-  transform: scaleY(0.08);
+.hero-id-card:focus-visible {
+  outline: 2px solid #915eff;
+  outline-offset: 6px;
+  border-radius: 18px;
 }
 
-.hero-mascot .mascot-arm {
-  transform-box: fill-box;
-  transform-origin: top center;
-}
-.hero-mascot #character.state-typing .mascot-armL {
-  animation: mascotBobL 0.5s ease-in-out infinite;
-}
-.hero-mascot #character.state-typing .mascot-armR {
-  animation: mascotBobR 0.5s ease-in-out infinite 0.25s;
-}
-@keyframes mascotBobL {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(3px);
-  }
-}
-@keyframes mascotBobR {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(3px);
-  }
+.hero-id-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.hero-mascot .mascot-float {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: mascotDrift 4.5s ease-in-out infinite;
+.hero-id-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
-.hero-mascot .mascot-float-a {
-  animation-duration: 5.5s;
-}
-.hero-mascot .mascot-float-b {
-  animation-duration: 3.8s;
-  animation-delay: 0.6s;
-}
-.hero-mascot .mascot-float-c {
-  animation-duration: 4.8s;
-  animation-delay: 1.2s;
-}
-@keyframes mascotDrift {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
+
+.hero-id-back {
+  transform: rotateY(180deg);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-mascot .eye-group,
-  .hero-mascot .mascot-eyebrow {
-    transition: none !important;
-  }
-  .hero-mascot .mascot-armL,
-  .hero-mascot .mascot-armR,
-  .hero-mascot .mascot-float {
-    animation: none !important;
+  .hero-id-inner {
+    transition: none;
   }
 }
 

@@ -4,7 +4,7 @@ import codechefIcon from "../assets/codechef.jpeg";
 import githubIcon from "../assets/github.jpeg";
 import linkedinIcon from "../assets/linkedin.png";
 import { styles } from "../styles";
-import HeroMascot from "./HeroMascot";
+import HeroIdCard from "./HeroIdCard";
 
 const Hero = () => {
   return (
@@ -68,7 +68,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <HeroMascot />
+        <HeroIdCard />
       </div>
     </section>
   );
