@@ -155,27 +155,24 @@ const experiences = [
     ],
   },
   {
-    title: "Software Engineer, I",
+    title: "Software Engineer",
     company_name: "Zebra Technologies",
     icon: office,
     iconBg: "#383E56",
-    date: "Mar 2024 - Jun 2026",
+    date: "Mar 2024 - Aug 2026",
     points: [
       "Built a Flutter SDK & Mobile application for supporting our printers across platforms.",
-      "Developed a web application, owning both frontend and backend - using Next.js and Django, covering from design through deployment.",
-      "Designed and shipped GenAI-powered features for customer-facing and internal tools, including RAG assistant, MCP, multi agents workflows.",
+      "Developed an web application, owning both frontend and backend - using NextJs and Django,  covering from design through deployment.",
+      "Designed and shipped GenAI-powered features for customer-facing and internal tools, including RAG assistant, MCP, multi agentic workflows.",
     ],
   },
   {
-    title: "Software Engineer, Professional II",
-    company_name: "Zebra Technologies",
+    title: "Sr. Software Engineer",
+    company_name: "NEXA",
     icon: office,
     iconBg: "#383E56",
-    date: "Jul 2026 - Present",
-    points: [
-      "Promoted to Software Engineer II, expanding focus into cross-platform and LLM-based development.",
-      "Mentoring an intern on agentic workflows, MCP development, and LLM evaluations.",
-    ],
+    date: "Aug 2026 - Present",
+    points: [],
   },
 ];
 
