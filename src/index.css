@@ -71,17 +71,20 @@
   -webkit-text-fill-color: transparent;
 }
 
-@keyframes scroll-vertical {
+/* The track renders the testimonials twice, so -50% lands the second copy
+   exactly where the first started - no measured pixel value to round off. */
+@keyframes scroll-horizontal {
   from {
-    transform: translateY(0);
+    transform: translateX(0);
   }
   to {
-    transform: translateY(var(--marquee-distance, -50%));
+    transform: translateX(-50%);
   }
 }
 
 .marquee-track {
-  animation: scroll-vertical linear infinite;
+  animation: scroll-horizontal linear infinite;
+  will-change: transform;
 }
 
 .marquee-viewport:hover .marquee-track,
@@ -91,17 +94,17 @@
 
 .marquee-fade {
   mask-image: linear-gradient(
-    to bottom,
+    to right,
     transparent,
-    black 12%,
-    black 88%,
+    black 10%,
+    black 90%,
     transparent
   );
   -webkit-mask-image: linear-gradient(
-    to bottom,
+    to right,
     transparent,
-    black 12%,
-    black 88%,
+    black 10%,
+    black 90%,
     transparent
   );
 }
