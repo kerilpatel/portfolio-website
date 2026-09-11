@@ -3,7 +3,6 @@ import React from "react";
 import { motion } from "framer-motion";
 
 import { achievements } from "../constants";
-import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
 
@@ -102,12 +101,11 @@ const AchievementCard = ({
 const Achievements = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Recognition and awards</p>
-        <h2 className={styles.sectionHeadText}>Achievements.</h2>
-      </motion.div>
+      <motion.h3 variants={textVariant()} className={styles.subHeadText}>
+        Achievements
+      </motion.h3>
 
-      <div className="mt-12 flex flex-wrap gap-6">
+      <div className="mt-8 flex flex-wrap gap-6">
         {achievements.map((achievement, index) => (
           <AchievementCard
             key={achievement.title}
@@ -120,4 +118,4 @@ const Achievements = () => {
   );
 };
 
-export default SectionWrapper(Achievements, "achievements");
+export default Achievements;

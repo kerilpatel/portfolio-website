@@ -49,7 +49,7 @@ const Navbar = () => {
             </p>
           </Link>
 
-          <ul className="list-none hidden xl:flex flex-row gap-6">
+          <ul className="list-none hidden lg:flex flex-row gap-6">
             {navLinks.map((link) => (
               <li key={link.id}>
                 <a
@@ -77,7 +77,7 @@ const Navbar = () => {
               aria-label={toggle ? "Close menu" : "Open menu"}
               aria-expanded={toggle}
               onClick={() => setToggle(!toggle)}
-              className="xl:hidden p-2 rounded-full hover:bg-white/5 transition-colors"
+              className="lg:hidden p-2 rounded-full hover:bg-white/5 transition-colors"
             >
               <img
                 src={toggle ? close : menu}
@@ -93,7 +93,7 @@ const Navbar = () => {
       <div
         className={`${
           toggle ? "block" : "hidden"
-        } xl:hidden mx-auto max-w-7xl mt-2 rounded-2xl border border-white/10 bg-[#0d0a1f]/95 backdrop-blur-xl p-4 shadow-[0_16px_40px_-16px_rgba(0,0,0,0.9)]`}
+        } lg:hidden mx-auto max-w-7xl mt-2 rounded-2xl border border-white/10 bg-[#0d0a1f]/95 backdrop-blur-xl p-4 shadow-[0_16px_40px_-16px_rgba(0,0,0,0.9)]`}
       >
         <ul className="list-none flex flex-col gap-1">
           {navLinks.map((nav) => (

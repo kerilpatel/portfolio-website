@@ -3,7 +3,6 @@ import React, { useLayoutEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 import { testimonials } from "../constants";
-import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { textVariant } from "../utils/motion";
 
@@ -70,12 +69,11 @@ const Feedbacks = () => {
 
   return (
     <>
-      <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>What others say</p>
-        <h2 className={styles.sectionHeadText}>Testimonials.</h2>
-      </motion.div>
+      <motion.h3 variants={textVariant()} className={styles.subHeadText}>
+        What others say
+      </motion.h3>
 
-      <div className="mt-12 -mx-6 sm:-mx-16">
+      <div className="mt-8 -mx-6 sm:-mx-16">
         <div className="marquee-viewport marquee-fade overflow-hidden">
           <div ref={trackRef} className="marquee-track flex w-max">
             {loopedTestimonials.map((card, i) => (
@@ -113,4 +111,4 @@ const Feedbacks = () => {
   );
 };
 
-export default SectionWrapper(Feedbacks, "testimonials");
+export default Feedbacks;

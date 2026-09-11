@@ -1,12 +1,10 @@
 import About from "./About";
-import Achievements from "./Achievements";
-import Certifications from "./Certifications";
 import Contact from "./Contact";
 import Experience from "./Experience";
-import Feedbacks from "./Feedbacks";
 import Footer from "./Footer";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
+import Recognition from "./Recognition";
 import Tech from "./Tech";
 import Works from "./Works";
 import { EarthCanvas, StarsCanvas } from "./canvas";
@@ -18,9 +16,7 @@ export {
   Tech,
   Experience,
   Works,
-  Feedbacks,
-  Certifications,
-  Achievements,
+  Recognition,
   Contact,
   Footer,
   EarthCanvas,

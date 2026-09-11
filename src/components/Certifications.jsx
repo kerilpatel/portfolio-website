@@ -3,7 +3,6 @@ import React from "react";
 import { motion } from "framer-motion";
 
 import { certifications } from "../constants";
-import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
 
@@ -72,20 +71,11 @@ const CertificationCard = ({ index, name, issuer, date, badge, link }) => (
 const Certifications = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Professional recognition</p>
-        <h2 className={styles.sectionHeadText}>Certifications.</h2>
-      </motion.div>
+      <motion.h3 variants={textVariant()} className={styles.subHeadText}>
+        Certifications
+      </motion.h3>
 
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
-      >
-        Industry certifications that validate my expertise and commitment to
-        continuous learning.
-      </motion.p>
-
-      <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
         {certifications.map((cert, index) => (
           <CertificationCard key={cert.name} index={index} {...cert} />
         ))}
@@ -94,4 +84,4 @@ const Certifications = () => {
   );
 };
 
-export default SectionWrapper(Certifications, "certifications");
+export default Certifications;
