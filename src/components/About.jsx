@@ -55,7 +55,7 @@ const About = () => {
             variants={fadeIn("left", "", 0.2, 1)}
             className="mt-4 text-secondary text-[17px] max-w-2xl leading-[30px]"
           >
-            Currently at NEXA, and previously spent 2.5 years at Zebra
+            Currently at Nexa Mobility, and previously spent 2.5 years at Zebra
             Technologies, where I built a Flutter SDK and mobile application
             supporting printers across platforms, and owned a web application
             end-to-end using Next.js and Django. I also designed and shipped

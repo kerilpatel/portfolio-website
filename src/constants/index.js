@@ -160,11 +160,15 @@ const experiences = [
   },
   {
     title: "Sr. Software Engineer",
-    company_name: "NEXA",
+    company_name: "Nexa Mobility",
     icon: office,
     iconBg: "#383E56",
     date: "Aug 2026 - Present",
-    points: [],
+    points: [
+      "Built an executive project-tracking dashboard on NextJs, replacing manual status reporting for top management.",
+      "Designed the ETL pipeline behind it — consolidating 4 data sources into a central database on a scheduled refresh.",
+      "Combined deterministic, rule-based metrics with an LLM layer that diagnoses project risks and summarizes status.",
+    ],
   },
 ];
 
