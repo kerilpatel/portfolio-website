@@ -72,7 +72,7 @@ const Certifications = () => {
   return (
     <>
       <motion.h3 variants={textVariant()} className={styles.subHeadText}>
-        Certifications
+        Accreditations
       </motion.h3>
 
       <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
