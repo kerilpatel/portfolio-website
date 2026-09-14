@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useId, useLayoutEffect, useRef, useState } from "react";
 
 import { motion } from "framer-motion";
 
@@ -15,6 +15,75 @@ const CATEGORY_META = {
   "Generative AI": { icon: Sparkles, accent: "#804dee" },
   "Architecture & Concepts": { icon: Blocks, accent: "#f5af19" },
   "APIs & Tools": { icon: Plug, accent: "#ec008c" },
+};
+
+// Minimum distance (px) the tooltip keeps from the viewport edges.
+const TOOLTIP_GUTTER = 12;
+
+const SkillPill = ({ name, note, accent }) => {
+  const tooltipId = useId();
+  const tooltipRef = useRef(null);
+  const [open, setOpen] = useState(false);
+  const [shift, setShift] = useState(0);
+
+  const close = () => {
+    setOpen(false);
+    setShift(0);
+  };
+
+  // Nudge the centered tooltip back on-screen for pills near the edges.
+  // Runs before paint, so the unshifted position is never visible.
+  useLayoutEffect(() => {
+    if (!open || !tooltipRef.current) return;
+    const { left, right } = tooltipRef.current.getBoundingClientRect();
+    const maxRight = window.innerWidth - TOOLTIP_GUTTER;
+    if (left < TOOLTIP_GUTTER) setShift(TOOLTIP_GUTTER - left);
+    else if (right > maxRight) setShift(maxRight - right);
+  }, [open]);
+
+  return (
+    <div
+      tabIndex={0}
+      aria-describedby={tooltipId}
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={close}
+      onFocus={() => setOpen(true)}
+      onBlur={close}
+      onKeyDown={(e) => e.key === "Escape" && close()}
+      className="relative hover:z-10 focus:z-10 border-white-100/10 bg-black-200 hover:bg-white-100/10 hover:border-secondary/50 focus:outline-none focus-visible:border-secondary/50 cursor-default rounded-full border px-4 py-2 text-[14px] text-secondary hover:text-white focus-visible:text-white transition-all duration-300 hover:shadow-[0_0_10px_rgba(170,166,195,0.2)]"
+    >
+      {name}
+      <span id={tooltipId} className="sr-only">
+        {note}
+      </span>
+      {open && (
+        <span
+          ref={tooltipRef}
+          role="tooltip"
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-full left-1/2 mb-2.5 w-max max-w-[min(240px,calc(100vw-24px))]"
+          style={{ transform: `translateX(calc(-50% + ${shift}px))` }}
+        >
+          <motion.span
+            initial={{ opacity: 0, y: 4 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
+            className="relative block rounded-lg border border-white-100/10 bg-primary px-3 py-1.5 text-center text-[12px] leading-snug text-white shadow-card"
+          >
+            <span
+              className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full align-middle"
+              style={{ backgroundColor: accent }}
+            />
+            {note}
+            <span
+              className="absolute top-full left-1/2 -mt-1 h-2 w-2 rotate-45 border-b border-r border-white-100/10 bg-primary"
+              style={{ marginLeft: `calc(-4px - ${shift}px)` }}
+            />
+          </motion.span>
+        </span>
+      )}
+    </div>
+  );
 };
 
 const SkillCard = ({ title, items, index }) => {
@@ -39,13 +108,8 @@ const SkillCard = ({ title, items, index }) => {
         </h3>
       </div>
       <div className="flex flex-wrap gap-3 sm:pt-1">
-        {items.map((item, itemIndex) => (
-          <div
-            key={itemIndex}
-            className="border-white-100/10 bg-black-200 hover:bg-white-100/10 hover:border-secondary/50 cursor-pointer rounded-full border px-4 py-2 text-[14px] text-secondary hover:text-white transition-all duration-300 hover:shadow-[0_0_10px_rgba(170,166,195,0.2)]"
-          >
-            {item}
-          </div>
+        {items.map(({ name, note }) => (
+          <SkillPill key={name} name={name} note={note} accent={accent} />
         ))}
       </div>
     </motion.div>
