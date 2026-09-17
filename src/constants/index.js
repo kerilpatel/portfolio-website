@@ -322,18 +322,18 @@ const projects = [
 
 const certifications = [
   {
-    name: "AWS Certified Cloud Practitioner",
-    issuer: "Amazon Web Services Training and Certification",
-    date: "Sep 2021",
-    badge: awsCcpBadge,
-    link: "https://www.credly.com/badges/32634e83-15e7-47e8-94df-d86af51046c3/public_url",
-  },
-  {
     name: "NVIDIA-Certified Associate: Generative AI LLMs",
     issuer: "NVIDIA",
     date: "Jul 2026",
     badge: nvidiaGenAiBadge,
     link: "https://www.credly.com/badges/b6032895-a039-445c-8d01-3d7455c2841d/public_url",
+  },
+  {
+    name: "AWS Certified Cloud Practitioner",
+    issuer: "Amazon Web Services Training and Certification",
+    date: "Sep 2021",
+    badge: awsCcpBadge,
+    link: "https://www.credly.com/badges/32634e83-15e7-47e8-94df-d86af51046c3/public_url",
   },
 ];
 
