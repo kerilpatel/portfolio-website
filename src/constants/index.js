@@ -64,9 +64,9 @@ const skills = [
   {
     title: "Languages",
     items: [
-      { name: "Dart", note: "Flutter SDK at Zebra Technologies" },
-      { name: "Python", note: "Django backends, Logator, SmartSell" },
       { name: "Java", note: "Android native layer, Flutter SDK" },
+      { name: "Python", note: "Django backends, Logator, SmartSell" },
+      { name: "Dart", note: "Flutter SDK at Zebra Technologies" },
       { name: "JavaScript", note: "React & Next.js web apps" },
       { name: "TypeScript", note: "Built Lumen AI document workspace" },
       { name: "SQL", note: "Zebra web app data layer" },
