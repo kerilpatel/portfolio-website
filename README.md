@@ -1,6 +1,6 @@
 # Portfolio Website
 
-My personal portfolio — [kerilpatel.com](https://www.kerilpatel.com)
+My personal portfolio — visit [kerilpatel.com](https://www.kerilpatel.com)
 
 A single-page site covering who I am, my experience, skills, certifications, achievements, projects, and testimonials, with a contact form at the end.
 
