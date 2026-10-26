@@ -5,6 +5,7 @@ import close from "./close.svg";
 import college from "./college.png";
 import creator from "./creator.png";
 import github from "./github.png";
+import githubAgenticAiBadge from "./github-agentic-ai-badge.png";
 import logator from "./logator.png";
 import logo from "./logo.svg";
 import lumen from "./lumen.png";
@@ -24,6 +25,7 @@ export {
   mobile,
   web,
   github,
+  githubAgenticAiBadge,
   menu,
   close,
   office,

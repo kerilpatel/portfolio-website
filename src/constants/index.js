@@ -4,6 +4,7 @@ import {
   claudeMarketplace,
   college,
   creator,
+  githubAgenticAiBadge,
   logator,
   lumen,
   mobile,
@@ -321,6 +322,13 @@ const projects = [
 ];
 
 const certifications = [
+  {
+    name: "GitHub Certified: Agentic AI Developer",
+    issuer: "GitHub",
+    date: "Oct 2026",
+    badge: githubAgenticAiBadge,
+    link: "https://learn.microsoft.com/api/credentials/share/en-in/kerilpatel/82B1BCDEB55260E1?sharingId=63B9E89B49B545C8",
+  },
   {
     name: "NVIDIA-Certified Associate: Generative AI LLMs",
     issuer: "NVIDIA",
